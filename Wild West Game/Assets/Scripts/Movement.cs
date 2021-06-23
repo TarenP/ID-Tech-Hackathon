@@ -39,6 +39,7 @@ public class Movement : MonoBehaviour
         MouseLook();
         if (Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
         if(Input.GetKey(KeyCode.A))
             transform.Translate(Vector3.left * speed * Time.deltaTime);
 
@@ -72,10 +73,10 @@ public class Movement : MonoBehaviour
         transform.Rotate(Vector3.up * mouseDelta.x * mouseSensitivity);
     }
 
-    void OnCollisionEnter(Collision other){
+    /*void OnCollisionEnter(Collision other){
             if(other.gameObject.CompareTag("Floor")){
                 Debug.Log("Hit");
                 jump = false;
             }
-        }
+        }*/
 }

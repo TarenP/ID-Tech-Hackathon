@@ -6,6 +6,11 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float impactForce = 30f;
 
+    public bool enemyRightArm = true;
+    public bool enemyLeftArm = true;
+    public bool enemyLegs = true;
+    public bool enemyHead = true;
+
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
@@ -32,8 +37,25 @@ public class Gun : MonoBehaviour
             {
                 health.TakeDamage(damage);
             }
+            if (hit.transform.name == "enemy head")
+            {
+                enemyHead = false;
+            }
+            if (hit.transform.name == "enemy legs")
+            {
+                enemyLegs = false;
+            }
+            if (hit.transform.name == "enemy right arm")
+            {
+                enemyRightArm = false;
+            }
+            if (hit.transform.name == "enemy left arm")
+            {
+                enemyLeftArm = false;
+            }
 
-            if(hit.rigidbody != null)
+
+            if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
