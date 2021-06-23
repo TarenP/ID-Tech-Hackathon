@@ -525,6 +525,9 @@ ModelImporter:
   - first:
       41386430: 2186277476908879412
     second: ImportLogs
+  - first:
+      74: 1695192892109923712
+    second: BasicMotions@Walk01 - Forwards
   externalObjects: {}
   materials:
     materialImportMode: 0
