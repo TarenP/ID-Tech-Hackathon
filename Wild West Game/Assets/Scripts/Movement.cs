@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
+    public Animator anim;
     public int speed = 5;
     Rigidbody rb;
     public float jumpForce = 4.0f;
@@ -20,11 +20,12 @@ public class Movement : MonoBehaviour
     public float maxClampy = 90f;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if(lockCursor = true)
+        if(lockCursor == true)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -35,22 +36,20 @@ public class Movement : MonoBehaviour
     void Update()
     {
         MouseLook();
-        if(Input.GetKey(KeyCode.W))
-                        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
+        if (Input.GetKey(KeyCode.W))
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         if(Input.GetKey(KeyCode.A))
-                        transform.Translate(Vector3.left * speed * Time.deltaTime);
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.D))
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-
-        if(Input.GetKey(KeyCode.S))
-                transform.Translate(Vector3.back * speed * Time.deltaTime);
-
-        if(Input.GetKey(KeyCode.Space) && jump==false){
-            rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
-            jump = true;
-        }
+        if (Input.GetKey(KeyCode.D))
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.S))
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
+        //if (Input.GetKey(KeyCode.Space) && jump==false){
+            //rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
+            //jump = true;
+            //anim.Play("Jump");
+        //}
     }
 
     void MouseLook()
@@ -67,6 +66,7 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter(Collision other){
             if(other.gameObject.CompareTag("Floor")){
+                Debug.Log("Hit");
                 jump = false;
             }
         }

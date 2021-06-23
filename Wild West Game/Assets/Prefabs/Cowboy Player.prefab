@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
+  impactForce: 30
   fpsCam: {fileID: 9082835226766380574}
   muzzleFlash: {fileID: 7299047828689109671}
   impactEffect: {fileID: 100002, guid: e74af37e539075d428c1f7bd8cdb781d, type: 3}
@@ -512,7 +513,6 @@ GameObject:
   - component: {fileID: 6661734580257718467}
   - component: {fileID: 6661734580265222881}
   - component: {fileID: 6661734581484029138}
-  - component: {fileID: 6661734581484029139}
   - component: {fileID: 6661734581484029141}
   m_Layer: 0
   m_Name: Cowboy Player
@@ -548,7 +548,7 @@ Animator:
   m_GameObject: {fileID: 6661734580257908127}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ad52d12ad7e12c644a18f176d31a93bb, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f421cb314634b84e97d0150bf33ff7a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -573,24 +573,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!143 &6661734581484029139
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661734580257908127}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.97, z: 0.15}
 --- !u!114 &6661734581484029141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,8 +585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e1b9991a6213f47bcda6bc751832d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 6661734580265222881}
   speed: 5
-  jumpForce: 4
   playerCamera: {fileID: 9082835226766380569}
   mouseSensitivity: 3
   lockCursor: 1
@@ -833,6 +815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6661734580257694841}
+  - component: {fileID: 967204795}
   m_Layer: 0
   m_Name: CG
   m_TagString: Untagged
@@ -855,6 +838,19 @@ Transform:
   m_Father: {fileID: 6661734580257718467}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967204795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661734580257950991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70428a4d4218958439455e34109ad885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 6661734580265222881}
 --- !u!1 &6661734580257953379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1295,7 @@ GameObject:
   - component: {fileID: 6661734580269449667}
   - component: {fileID: 6661734580488222990}
   - component: {fileID: 3841705634865705603}
+  - component: {fileID: 992028523}
   m_Layer: 0
   m_Name: CowBoy
   m_TagString: Untagged
@@ -1447,6 +1444,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &992028523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661734580257991107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea455f56f6253747815087afbe9bd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 4
+  anim: {fileID: 0}
 --- !u!1 &6661734580257998683
 GameObject:
   m_ObjectHideFlags: 0
