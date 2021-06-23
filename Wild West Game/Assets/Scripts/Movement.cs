@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -46,10 +47,17 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
             transform.Translate(Vector3.back * speed * Time.deltaTime);
         //if (Input.GetKey(KeyCode.Space) && jump==false){
-            //rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
-            //jump = true;
-            //anim.Play("Jump");
+        //rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
+        //jump = true;
+        //anim.Play("Jump");
         //}
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+            
     }
 
     void MouseLook()
