@@ -22,18 +22,43 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+    public Vector3 upRecoil;
+    Vector3 originalRotation;
+
+
+    void Start()
+    {
+        originalRotation = transform.localEulerAngles;
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && ableToShoot == true)
         {
-            
+            StartCoroutine(Main());
             Shoot();
             ableToShoot = false;
             StartCoroutine(Shooter());
 
         }
+    }
+    private void AddRecoil()
+    {
+        transform.localEulerAngles += upRecoil;
+    }
+
+    private void StopRecoil()
+    {
+        transform.localEulerAngles = originalRotation;
+
+    }
+    IEnumerator Main()
+    {
+        AddRecoil();
+        yield return new WaitForSeconds(0.7f);
+        StopRecoil();
     }
 
     IEnumerator Shooter()
@@ -61,6 +86,7 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             EnemyHealth health = Enemy.GetComponent<EnemyHealth>();
+            
             
             if (hit.transform.tag == "enemy head")
             {
@@ -99,7 +125,7 @@ public class Gun : MonoBehaviour
             }
             Debug.Log("Enemy Health" + health.health);
 
-
+            
 
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2f);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementAnimation : MonoBehaviour
 {
     public Animator anim;
+    public EnemyGun gun;
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,7 @@ public class MovementAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKey && gun.LeftLeg == true || gun.RightLeg == true)
         {
             if (Input.GetKeyDown("w"))
             {

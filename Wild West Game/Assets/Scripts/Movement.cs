@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    public Animator anim;
     public int speed = 5;
     Rigidbody rb;
     public float jumpForce = 4.0f;
