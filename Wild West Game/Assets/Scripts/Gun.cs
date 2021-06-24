@@ -63,18 +63,18 @@ public class Gun : MonoBehaviour
 
     IEnumerator Shooter()
     {
-        if (gun.Head == false)
+        /*if (gun.Head == false)
         {
             reloadTime = 4f;
-        }
+        }*/
         if (gun.RightArm == false)
         {
             reloadTime = 6f;
         }
-        if (gun.RightArm == false && gun.Head == false)
+        /*if (gun.RightArm == false && gun.Head == false)
         {
             reloadTime = 8f;
-        }
+        }*/
         yield return new WaitForSeconds(reloadTime);
         ableToShoot = true;
     }
@@ -90,7 +90,7 @@ public class Gun : MonoBehaviour
             
             if (hit.transform.tag == "enemy head")
             {
-                health.TakeDamage(50);
+                health.TakeDamage(100);
                 enemyHead = false;
                 //Debug.Log("Headshot");
             }

@@ -25,6 +25,8 @@ public class EnemyGun : MonoBehaviour
 
     public Gun gun;
 
+
+
     public GameObject[] targets;
     void Update()
     {
@@ -38,19 +40,19 @@ public class EnemyGun : MonoBehaviour
     }
     IEnumerator StartShoot()
     {
-        reloadTime = Random.Range(2, 4);
-        if (gun.enemyHead == false)
+        reloadTime = Random.Range(3, 5);
+        /*if (gun.enemyHead == false)
         {
-            reloadTime = 4f;
-        }
+            reloadTime = 5f;
+        }*/
         if (gun.enemyRightArm == false)
-        {
-            reloadTime = 6f;
-        }
-        if (gun.enemyRightArm == false && gun.enemyHead == false)
         {
             reloadTime = 8f;
         }
+        /*if (gun.enemyRightArm == false && gun.enemyHead == false)
+        {
+            reloadTime = 8f;
+        }*/
 
         yield return new WaitForSeconds(reloadTime);
         Shoot();
@@ -73,7 +75,7 @@ public class EnemyGun : MonoBehaviour
 
             if (hit.transform.tag == "head")
             {
-                health.TakeDamage(50);
+                health.TakeDamage(100);
                 Head = false;
 
             }
