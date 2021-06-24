@@ -13,9 +13,7 @@ public class EnemyGun : MonoBehaviour
     public bool RightLeg = true;
     public bool Head = true;
 
-    bool shoot = false;
-
-    public float reloadTime;
+    public bool shoot;
 
     public Camera fpsCam;
     public ParticleSystem Flash;
@@ -25,36 +23,51 @@ public class EnemyGun : MonoBehaviour
 
     public Gun gun;
 
-
+    public float chamberTime;
+    public float ammoCount = 6;
+    public float reloadTime = 10f;
+    public bool inReload = false;
 
     public GameObject[] targets;
     void Update()
     {
         
-        if (shoot == false)
+        if (shoot == false && inReload == false)
         {
+            ammoCount -= 1;
             shoot = true;
             StartCoroutine(StartShoot());
         }
-
+        if (ammoCount <= 0)
+        {
+            inReload = true;
+            StartCoroutine(Reload());
+            ammoCount = 6;
+        }
+        Debug.Log(ammoCount);
+    }
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(10f);
+        inReload = false;
     }
     IEnumerator StartShoot()
     {
-        reloadTime = Random.Range(3, 5);
+        chamberTime = Random.Range(3, 5);
         /*if (gun.enemyHead == false)
         {
             reloadTime = 5f;
         }*/
         if (gun.enemyRightArm == false)
         {
-            reloadTime = 8f;
+            chamberTime = 8f;
         }
         /*if (gun.enemyRightArm == false && gun.enemyHead == false)
         {
             reloadTime = 8f;
         }*/
 
-        yield return new WaitForSeconds(reloadTime);
+        yield return new WaitForSeconds(chamberTime);
         Shoot();
         shoot = false;
     }

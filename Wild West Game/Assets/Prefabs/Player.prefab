@@ -1278,8 +1278,8 @@ Camera:
   m_GameObject: {fileID: 6523419086786386359}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.4690281, g: 0.62782323, b: 0.8773585, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1424,11 +1424,14 @@ MonoBehaviour:
   enemyHead: 1
   gun: {fileID: 0}
   Enemy: {fileID: 0}
-  reloadTime: 3
+  chamberTime: 2
   fpsCam: {fileID: 6523419086786386357}
   muzzleFlash: {fileID: 8185463627698248442}
   impactEffect: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
   upRecoil: {x: 0, y: 0, z: -15}
+  ammoCount: 6
+  reloadTime: 3
+  inReload: 0
 --- !u!1 &8716820239259566520
 GameObject:
   m_ObjectHideFlags: 0

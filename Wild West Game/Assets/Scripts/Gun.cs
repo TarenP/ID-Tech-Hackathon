@@ -13,10 +13,10 @@ public class Gun : MonoBehaviour
 
     public EnemyGun gun;
 
-    public GameObject Enemy; 
+    public GameObject Enemy;
 
-    bool ableToShoot = true;
-    public float reloadTime = 2f;
+    public bool ableToShoot;
+    public float chamberTime = 2f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -25,7 +25,9 @@ public class Gun : MonoBehaviour
     public Vector3 upRecoil;
     Vector3 originalRotation;
 
-    public 
+    public float ammoCount = 6;
+    public float reloadTime = 10f;
+    public bool inReload = false;
     void Start()
     {
         originalRotation = transform.localEulerAngles;
@@ -35,15 +37,29 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && ableToShoot == true)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ableToShoot == true && inReload == false)
         {
+            ammoCount -= 1;
             StartCoroutine(Main());
             Shoot();
             ableToShoot = false;
             StartCoroutine(Shooter());
 
         }
+        if (ammoCount <= 0)
+        {
+            inReload = true;
+            StartCoroutine(Reload());
+            ammoCount = 6;
+        }
     }
+
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(10f);
+        inReload = false;
+    }
+
     private void AddRecoil()
     {
         transform.localEulerAngles += upRecoil;
@@ -69,13 +85,13 @@ public class Gun : MonoBehaviour
         }*/
         if (gun.RightArm == false)
         {
-            reloadTime = 6f;
+            chamberTime = 6f;
         }
         /*if (gun.RightArm == false && gun.Head == false)
         {
             reloadTime = 8f;
         }*/
-        yield return new WaitForSeconds(reloadTime);
+        yield return new WaitForSeconds(chamberTime);
         ableToShoot = true;
     }
     void Shoot()

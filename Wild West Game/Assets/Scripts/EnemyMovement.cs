@@ -18,6 +18,8 @@ public class EnemyMovement : MonoBehaviour
     public Vector3 walkPoint;
     public float walkPointRange;
 
+    public bool move;
+
     Animator animator;
     // Update is called once per frame
 
@@ -29,19 +31,21 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        
-        if (gun.enemyLeftLeg == false || gun.enemyRightLeg == false)
+        if (move == true)
         {
-            speed = 2;
-        }
-        if (gun.enemyLeftLeg == false && gun.enemyRightLeg == false)
-        {
-            speed = 0;
-        }
-        Patrolling();
-        if (agent.velocity.magnitude > 0)
-        {
-            animator.Play("Forwards");
+            if (gun.enemyLeftLeg == false || gun.enemyRightLeg == false)
+            {
+                speed = 2;
+            }
+            if (gun.enemyLeftLeg == false && gun.enemyRightLeg == false)
+            {
+                speed = 0;
+            }
+            Patrolling();
+            if (agent.velocity.magnitude > 0)
+            {
+                animator.Play("Forwards");
+            }
         }
     }
     private void Patrolling()

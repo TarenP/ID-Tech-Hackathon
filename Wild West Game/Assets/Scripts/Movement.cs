@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     public float minClampy = -90f;
     public float maxClampy = 90f;
 
-
+    public bool move;
 
     // Start is called before the first frame update
     void Start()
@@ -36,36 +36,39 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gun.LeftLeg == false || gun.RightLeg == false)
+        if (move == true)
         {
-            speed = 2;
-        }
-        if (gun.LeftLeg == false && gun.RightLeg == false)
-        {
-            speed = 0;
-        }
+            if (gun.LeftLeg == false || gun.RightLeg == false)
+            {
+                speed = 2;
+            }
+            if (gun.LeftLeg == false && gun.RightLeg == false)
+            {
+                speed = 0;
+            }
 
-        MouseLook();
-        if (Input.GetKey(KeyCode.W))
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            MouseLook();
+            if (Input.GetKey(KeyCode.W))
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.A))
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.A))
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.D))
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.S))
-            transform.Translate(Vector3.back * speed * Time.deltaTime);
-        //if (Input.GetKey(KeyCode.Space) && jump==false){
-        //rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
-        //jump = true;
-        //anim.Play("Jump");
-        //}
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            if (Input.GetKey(KeyCode.D))
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.S))
+                transform.Translate(Vector3.back * speed * Time.deltaTime);
+            //if (Input.GetKey(KeyCode.Space) && jump==false){
+            //rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
+            //jump = true;
+            //anim.Play("Jump");
+            //}
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
             
     }
