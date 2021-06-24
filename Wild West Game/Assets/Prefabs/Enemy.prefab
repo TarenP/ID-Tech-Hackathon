@@ -188,6 +188,7 @@ MonoBehaviour:
   LeftLeg: 1
   RightLeg: 1
   Head: 1
+  shoot: 0
   fpsCam: {fileID: 2305252247356639886}
   Flash: {fileID: 9159759827660321408}
   impact: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
@@ -694,6 +695,7 @@ MonoBehaviour:
     m_Bits: 8
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
+  move: 0
 --- !u!195 &2013517800
 NavMeshAgent:
   m_ObjectHideFlags: 0

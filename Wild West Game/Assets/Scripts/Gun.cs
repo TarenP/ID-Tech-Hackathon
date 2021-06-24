@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
     public float ammoCount = 6;
     public float reloadTime = 10f;
     public bool inReload = false;
+
     void Start()
     {
         originalRotation = transform.localEulerAngles;
@@ -85,7 +86,7 @@ public class Gun : MonoBehaviour
         }*/
         if (gun.RightArm == false)
         {
-            chamberTime = 6f;
+            chamberTime = 4f;
         }
         /*if (gun.RightArm == false && gun.Head == false)
         {

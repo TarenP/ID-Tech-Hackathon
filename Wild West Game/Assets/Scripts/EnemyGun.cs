@@ -53,14 +53,14 @@ public class EnemyGun : MonoBehaviour
     }
     IEnumerator StartShoot()
     {
-        chamberTime = Random.Range(3, 5);
+        chamberTime = Random.Range(2, 4);
         /*if (gun.enemyHead == false)
         {
             reloadTime = 5f;
         }*/
         if (gun.enemyRightArm == false)
         {
-            chamberTime = 8f;
+            chamberTime = 5f;
         }
         /*if (gun.enemyRightArm == false && gun.enemyHead == false)
         {
@@ -95,19 +95,19 @@ public class EnemyGun : MonoBehaviour
             if (hit.transform.tag == "right leg")
             {
                 health.TakeDamage(20);
-                Debug.Log("leg hit");
+                //Debug.Log("leg hit");
                 RightLeg = false;
             }
             if (hit.transform.tag == "left leg")
             {
                 health.TakeDamage(20);
-                Debug.Log("leg hit");
+                //Debug.Log("leg hit");
                 LeftLeg = false;
             }
             if (hit.transform.tag == "right arm")
             {
                 health.TakeDamage(30);
-                Debug.Log("arm hit");
+                //Debug.Log("arm hit");
                 RightArm = false;
             }
             if (hit.transform.tag == "left arm")

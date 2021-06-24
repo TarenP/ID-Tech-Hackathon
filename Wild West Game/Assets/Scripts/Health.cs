@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -12,12 +13,8 @@ public class Health : MonoBehaviour
         //Debug.Log(health);
         if (health <= 0f)
         {
-            Die();
+
         }
     }
 
-    void Die()
-    {
-        Debug.Log("Player Dead");
-    }
 }
