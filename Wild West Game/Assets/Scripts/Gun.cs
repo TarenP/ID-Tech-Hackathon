@@ -1,27 +1,57 @@
 using UnityEngine;
+using System.Collections;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
     public float range = 100f;
-    public float impactForce = 30f;
 
     public bool enemyRightArm = true;
     public bool enemyLeftArm = true;
-    public bool enemyLegs = true;
+    public bool enemyLeftLeg = true;
+    public bool enemyRightLeg = true;
     public bool enemyHead = true;
+
+    public EnemyGun gun;
+
+    public GameObject Enemy; 
+
+    bool ableToShoot = true;
+    public float reloadTime = 2f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ableToShoot == true)
         {
+            
             Shoot();
+            ableToShoot = false;
+            StartCoroutine(Shooter());
+
         }
+    }
+
+    IEnumerator Shooter()
+    {
+        if (gun.Head == false)
+        {
+            reloadTime = 4f;
+        }
+        if (gun.RightArm == false)
+        {
+            reloadTime = 6f;
+        }
+        if (gun.RightArm == false && gun.Head == false)
+        {
+            reloadTime = 8f;
+        }
+        yield return new WaitForSeconds(reloadTime);
+        ableToShoot = true;
     }
     void Shoot()
     {
@@ -30,35 +60,46 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
-
-            Health health = hit.transform.GetComponent<Health>();
-            if (health != null)
+            EnemyHealth health = Enemy.GetComponent<EnemyHealth>();
+            
+            if (hit.transform.tag == "enemy head")
             {
-                health.TakeDamage(damage);
-            }
-            if (hit.transform.name == "enemy head")
-            {
+                health.TakeDamage(50);
                 enemyHead = false;
+                //Debug.Log("Headshot");
             }
-            if (hit.transform.name == "enemy legs")
+            if (hit.transform.tag == "enemy right leg")
             {
-                enemyLegs = false;
+                health.TakeDamage(20);
+                enemyRightLeg = false;
+                //Debug.Log("Right Leg");
             }
-            if (hit.transform.name == "enemy right arm")
+            if (hit.transform.tag == "enemy left leg")
             {
+                health.TakeDamage(20);
+                enemyLeftLeg = false;
+                //Debug.Log("Left Leg");
+            }
+            if (hit.transform.tag == "enemy right arm")
+            {
+                health.TakeDamage(30);
                 enemyRightArm = false;
+                //Debug.Log("Right Arm");
             }
-            if (hit.transform.name == "enemy left arm")
+            if (hit.transform.tag == "enemy left arm")
             {
+                health.TakeDamage(30);
                 enemyLeftArm = false;
+                //Debug.Log("Left Arm");
             }
-
-
-            if (hit.rigidbody != null)
+            else if (hit.transform.tag == "enemy body")
             {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
+                health.TakeDamage(20);
+                //Debug.Log("BodyShot");
             }
+            Debug.Log("Enemy Health" + health.health);
+
+
 
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2f);

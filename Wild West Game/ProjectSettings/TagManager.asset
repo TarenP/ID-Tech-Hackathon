@@ -6,6 +6,18 @@ TagManager:
   tags:
   - Floor
   - Enemy
+  - enemy right leg
+  - enemy left leg
+  - enemy right arm
+  - enemy left arm
+  - enemy head
+  - head
+  - right leg
+  - left leg
+  - right arm
+  - left arm
+  - body
+  - enemy body
   layers:
   - Default
   - TransparentFX

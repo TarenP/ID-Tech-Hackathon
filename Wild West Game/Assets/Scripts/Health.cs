@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
+        //Debug.Log(health);
         if (health <= 0f)
         {
             Die();
@@ -17,6 +18,6 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Dead");
+        Debug.Log("Player Dead");
     }
 }

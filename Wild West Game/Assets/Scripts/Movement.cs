@@ -9,11 +9,12 @@ public class Movement : MonoBehaviour
     public int speed = 5;
     Rigidbody rb;
     public float jumpForce = 4.0f;
-    bool jump = false;
     [SerializeField] Transform playerCamera = null;
     [SerializeField] float mouseSensitivity = 3.5f;
 
     [SerializeField] bool lockCursor = true;
+
+    public EnemyGun gun;
 
     float cameraPitch = 0.0f;
 
@@ -36,6 +37,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gun.LeftLeg == false || gun.RightLeg == false)
+        {
+            speed = 2;
+        }
+        if (gun.LeftLeg == false && gun.RightLeg == false)
+        {
+            speed = 0;
+        }
+
         MouseLook();
         if (Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
