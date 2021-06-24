@@ -25,7 +25,7 @@ public class Gun : MonoBehaviour
     public Vector3 upRecoil;
     Vector3 originalRotation;
 
-
+    public 
     void Start()
     {
         originalRotation = transform.localEulerAngles;

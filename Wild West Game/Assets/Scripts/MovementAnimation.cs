@@ -15,24 +15,28 @@ public class MovementAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey && gun.LeftLeg == true || gun.RightLeg == true)
+        if (Input.anyKey)
         {
-            if (Input.GetKeyDown("w"))
+            if (gun.LeftLeg == true || gun.RightLeg == true)
             {
-                anim.Play("forwards");
+                if (Input.GetKeyDown("w"))
+                {
+                    anim.Play("forwards");
+                }
+                if (Input.GetKeyDown("s"))
+                {
+                    anim.Play("backwards");
+                }
+                if (Input.GetKeyDown("a"))
+                {
+                    anim.Play("left");
+                }
+                if (Input.GetKeyDown("d"))
+                {
+                    anim.Play("right");
+                }
             }
-            if (Input.GetKeyDown("s"))
-            {
-                anim.Play("backwards");
-            }
-            if (Input.GetKeyDown("a"))
-            {
-                anim.Play("left");
-            }
-            if (Input.GetKeyDown("d"))
-            {
-                anim.Play("right");
-            }
+           
         }
         else
         {
