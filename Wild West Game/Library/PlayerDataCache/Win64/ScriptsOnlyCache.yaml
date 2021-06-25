@@ -8,12 +8,15 @@ ScriptsOnlyBuild:
     - Gun
     - Health
     - LimbHealth
+    - MouseUnlock
     - Movement
     - MovementAnimation
     - StartPaces
     - sceneManaging
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
+    NavMeshComponentsEditor.dll:
+    - UnityEditor.AI.NavMeshAssetManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -63,25 +66,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1526}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1668}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 1748}
+      Script: {instanceID: 1746}
     - Class: 114
-      Script: {instanceID: 2298}
+      Script: {instanceID: 2296}
     - Class: 114
-      Script: {instanceID: 2402}
+      Script: {instanceID: 2400}
     - Class: 114
-      Script: {instanceID: 2440}
+      Script: {instanceID: 2438}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2546}
     - Class: 114
-      Script: {instanceID: 2732}
+      Script: {instanceID: 2730}
     - Class: 114
-      Script: {instanceID: 2812}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3698}
+      Script: {instanceID: 3696}
+    - Class: 114
+      Script: {instanceID: 341228}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -136,27 +141,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1932}
+      Script: {instanceID: 1930}
     - Class: 114
-      Script: {instanceID: 2116}
+      Script: {instanceID: 2114}
     - Class: 114
-      Script: {instanceID: 2140}
+      Script: {instanceID: 2138}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 2720}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 3010}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3042}
+      Script: {instanceID: 3040}
     - Class: 114
-      Script: {instanceID: 3326}
+      Script: {instanceID: 3324}
     - Class: 114
-      Script: {instanceID: 3910}
+      Script: {instanceID: 3908}
     - Class: 114
-      Script: {instanceID: 3946}
+      Script: {instanceID: 3944}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 137
@@ -197,31 +202,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1526}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1668}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 1748}
+      Script: {instanceID: 1746}
     - Class: 114
-      Script: {instanceID: 2000}
+      Script: {instanceID: 1998}
     - Class: 114
-      Script: {instanceID: 2298}
+      Script: {instanceID: 2296}
     - Class: 114
-      Script: {instanceID: 2402}
+      Script: {instanceID: 2400}
     - Class: 114
-      Script: {instanceID: 2440}
+      Script: {instanceID: 2438}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2546}
     - Class: 114
-      Script: {instanceID: 2732}
+      Script: {instanceID: 2730}
     - Class: 114
-      Script: {instanceID: 2812}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3694}
+      Script: {instanceID: 3692}
     - Class: 114
-      Script: {instanceID: 3698}
+      Script: {instanceID: 3696}
     - Class: 114
-      Script: {instanceID: 3936}
+      Script: {instanceID: 3934}
+    - Class: 114
+      Script: {instanceID: 341228}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -260,25 +267,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1526}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1668}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 1748}
+      Script: {instanceID: 1746}
     - Class: 114
-      Script: {instanceID: 2298}
+      Script: {instanceID: 2296}
     - Class: 114
-      Script: {instanceID: 2402}
+      Script: {instanceID: 2400}
     - Class: 114
-      Script: {instanceID: 2440}
+      Script: {instanceID: 2438}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2546}
     - Class: 114
-      Script: {instanceID: 2732}
+      Script: {instanceID: 2730}
     - Class: 114
-      Script: {instanceID: 2812}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 3698}
+      Script: {instanceID: 3696}
+    - Class: 114
+      Script: {instanceID: 341228}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -844,7 +853,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: c4e17c1f6352497cc7f8ce6fe59ea046
+      Hash: d73733590c278b8bc2eecf475498a6fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
@@ -908,6 +917,30 @@ ScriptsOnlyBuild:
     assemblyName: NavMeshComponents.dll
     namespaceName: UnityEngine.AI
     className: NavMeshLink
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MouseUnlock
+  - hash:
+      serializedVersion: 2
+      Hash: 0edeba255bdbade25edc357f1412ba38
+    assemblyName: Unity.2D.SpriteShape.Runtime.dll
+    namespaceName: UnityEngine.U2D
+    className: SpriteShape
+  - hash:
+      serializedVersion: 2
+      Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
+    assemblyName: Unity.2D.SpriteShape.Runtime.dll
+    namespaceName: 
+    className: SpriteShapeGeometryCache
+  - hash:
+      serializedVersion: 2
+      Hash: 349d08daa6108b9a28f8c38fd40ce96f
+    assemblyName: Unity.2D.SpriteShape.Runtime.dll
+    namespaceName: UnityEngine.U2D
+    className: SpriteShapeController
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

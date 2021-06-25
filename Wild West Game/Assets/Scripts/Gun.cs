@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
     public GameObject Enemy;
 
     public bool ableToShoot;
-    public float chamberTime = 2f;
+    public float chamberTime = 1f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
     Vector3 originalRotation;
 
     public float ammoCount = 6;
-    public float reloadTime = 10f;
+    public float reloadTime = 8f;
     public bool inReload = false;
 
     void Start()
@@ -58,7 +58,7 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(reloadTime);
         inReload = false;
     }
 

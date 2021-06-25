@@ -45,23 +45,22 @@ public class EnemyGun : MonoBehaviour
             StartCoroutine(Reload());
             ammoCount = 6;
         }
-        Debug.Log(ammoCount);
     }
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(reloadTime);
         inReload = false;
     }
     IEnumerator StartShoot()
     {
-        chamberTime = Random.Range(2, 4);
+        chamberTime = 2f;
         /*if (gun.enemyHead == false)
         {
             reloadTime = 5f;
         }*/
         if (gun.enemyRightArm == false)
         {
-            chamberTime = 5f;
+            chamberTime = 6f;
         }
         /*if (gun.enemyRightArm == false && gun.enemyHead == false)
         {
@@ -85,10 +84,11 @@ public class EnemyGun : MonoBehaviour
         {
 
             Health health = player.GetComponent<Health>();
-            
 
+            
             if (hit.transform.tag == "head")
             {
+                //Debug.Log("Head hit");
                 health.TakeDamage(100);
                 Head = false;
 
@@ -114,10 +114,12 @@ public class EnemyGun : MonoBehaviour
             if (hit.transform.tag == "left arm")
             {
                 health.TakeDamage(30);
+                //Debug.Log("arm hit");
                 LeftArm = false;
             }
             else if (hit.transform.tag == "body")
             {
+                //Debug.Log("body");
                 health.TakeDamage(20);
             }
             Debug.Log("Player Health" + health.health);
@@ -127,9 +129,11 @@ public class EnemyGun : MonoBehaviour
                 GameObject Blood = Instantiate(bloodImpact, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(Blood, 2f);
             }
-            GameObject impactGO = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
-            
+            else
+            {
+                GameObject impactGO = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
+            }
         }
     }
 }
