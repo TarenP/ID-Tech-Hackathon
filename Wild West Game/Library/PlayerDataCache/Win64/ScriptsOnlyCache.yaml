@@ -11,12 +11,11 @@ ScriptsOnlyBuild:
     - MouseUnlock
     - Movement
     - MovementAnimation
+    - ScoreDisplay
     - StartPaces
     - sceneManaging
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
-    NavMeshComponentsEditor.dll:
-    - UnityEditor.AI.NavMeshAssetManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -43,6 +42,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Death Screen.unity:
     - Class: 1
@@ -66,27 +66,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1524}
+      Script: {instanceID: 1536}
     - Class: 114
-      Script: {instanceID: 1666}
+      Script: {instanceID: 1700}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 2296}
+      Script: {instanceID: 2106}
     - Class: 114
-      Script: {instanceID: 2400}
+      Script: {instanceID: 2250}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2458}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2490}
     - Class: 114
-      Script: {instanceID: 2730}
+      Script: {instanceID: 2588}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 3696}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 341228}
+      Script: {instanceID: 2992}
+    - Class: 114
+      Script: {instanceID: 3090}
+    - Class: 114
+      Script: {instanceID: 4170}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -141,28 +145,42 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1930}
+      Script: {instanceID: 1536}
     - Class: 114
-      Script: {instanceID: 2114}
+      Script: {instanceID: 2012}
     - Class: 114
-      Script: {instanceID: 2138}
+      Script: {instanceID: 2106}
     - Class: 114
-      Script: {instanceID: 2372}
+      Script: {instanceID: 2230}
     - Class: 114
-      Script: {instanceID: 2700}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 2718}
+      Script: {instanceID: 2458}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 2554}
     - Class: 114
-      Script: {instanceID: 3040}
+      Script: {instanceID: 2588}
     - Class: 114
-      Script: {instanceID: 3324}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 3908}
+      Script: {instanceID: 2966}
     - Class: 114
-      Script: {instanceID: 3944}
+      Script: {instanceID: 2980}
+    - Class: 114
+      Script: {instanceID: 2992}
+    - Class: 114
+      Script: {instanceID: 3338}
+    - Class: 114
+      Script: {instanceID: 3380}
+    - Class: 114
+      Script: {instanceID: 3706}
+    - Class: 114
+      Script: {instanceID: 4422}
+    - Class: 114
+      Script: {instanceID: 4482}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -175,6 +193,12 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 238
       Script: {instanceID: 0}
@@ -202,33 +226,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1524}
+      Script: {instanceID: 1536}
     - Class: 114
-      Script: {instanceID: 1666}
+      Script: {instanceID: 1700}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 1998}
+      Script: {instanceID: 2092}
     - Class: 114
-      Script: {instanceID: 2296}
+      Script: {instanceID: 2458}
     - Class: 114
-      Script: {instanceID: 2400}
+      Script: {instanceID: 2490}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2588}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 2730}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2992}
     - Class: 114
-      Script: {instanceID: 3692}
+      Script: {instanceID: 3090}
     - Class: 114
-      Script: {instanceID: 3696}
+      Script: {instanceID: 4164}
     - Class: 114
-      Script: {instanceID: 3934}
+      Script: {instanceID: 4170}
     - Class: 114
-      Script: {instanceID: 341228}
+      Script: {instanceID: 4458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -267,27 +291,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1524}
+      Script: {instanceID: 1536}
     - Class: 114
-      Script: {instanceID: 1666}
+      Script: {instanceID: 1700}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 2296}
+      Script: {instanceID: 2106}
     - Class: 114
-      Script: {instanceID: 2400}
+      Script: {instanceID: 2250}
     - Class: 114
-      Script: {instanceID: 2438}
+      Script: {instanceID: 2458}
     - Class: 114
-      Script: {instanceID: 2546}
+      Script: {instanceID: 2490}
     - Class: 114
-      Script: {instanceID: 2730}
+      Script: {instanceID: 2588}
     - Class: 114
-      Script: {instanceID: 2810}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 3696}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 341228}
+      Script: {instanceID: 2992}
+    - Class: 114
+      Script: {instanceID: 3090}
+    - Class: 114
+      Script: {instanceID: 4170}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -445,6 +473,12 @@ ScriptsOnlyBuild:
     className: EnemyMovement
   - hash:
       serializedVersion: 2
+      Hash: 2775222b24497d676c871020e01ff00f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreDisplay
+  - hash:
+      serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -475,7 +509,13 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 535bd4c60393bdfedc9ca1fe9fb9ef49
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MouseUnlock
+  - hash:
+      serializedVersion: 2
+      Hash: 2205cd5760ca6292587fee8153cf3686
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StartPaces
@@ -625,6 +665,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 349d08daa6108b9a28f8c38fd40ce96f
+    assemblyName: Unity.2D.SpriteShape.Runtime.dll
+    namespaceName: UnityEngine.U2D
+    className: SpriteShapeController
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -667,7 +713,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 9d441925910615f723932e2f67a048ee
+      Hash: c0734c4050091658a132a3177f2eaf96
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Gun
@@ -769,6 +815,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: 0edeba255bdbade25edc357f1412ba38
+    assemblyName: Unity.2D.SpriteShape.Runtime.dll
+    namespaceName: UnityEngine.U2D
+    className: SpriteShape
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -785,6 +837,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
+    assemblyName: Unity.2D.SpriteShape.Runtime.dll
+    namespaceName: 
+    className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
       Hash: c6abc8e2c43d72b4fa8c50cdd9f3d4bc
@@ -853,7 +911,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: d73733590c278b8bc2eecf475498a6fd
+      Hash: 4e597784cf8e4a64025351c204d271b4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
@@ -917,35 +975,11 @@ ScriptsOnlyBuild:
     assemblyName: NavMeshComponents.dll
     namespaceName: UnityEngine.AI
     className: NavMeshLink
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MouseUnlock
-  - hash:
-      serializedVersion: 2
-      Hash: 0edeba255bdbade25edc357f1412ba38
-    assemblyName: Unity.2D.SpriteShape.Runtime.dll
-    namespaceName: UnityEngine.U2D
-    className: SpriteShape
-  - hash:
-      serializedVersion: 2
-      Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
-    assemblyName: Unity.2D.SpriteShape.Runtime.dll
-    namespaceName: 
-    className: SpriteShapeGeometryCache
-  - hash:
-      serializedVersion: 2
-      Hash: 349d08daa6108b9a28f8c38fd40ce96f
-    assemblyName: Unity.2D.SpriteShape.Runtime.dll
-    namespaceName: UnityEngine.U2D
-    className: SpriteShapeController
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/Death Screen.unity
   - Assets/Scenes/Victory Screen.unity
-  playerPath: D:/taren/Desktop/Taren Patel ID Tech Hackathon/ID-Tech-Hackathon/Wild
-    West Game/Builds/Unity Hackathon ID Tech.exe
+  playerPath: D:/taren/Desktop/Taren Patel ID Tech Hackathon/Builds/Unity Hackathon
+    ID Tech.exe
