@@ -19,6 +19,9 @@ public class StartPaces : MonoBehaviour
     public Camera FPSCam;
 
     public bool doPaces = true;
+
+    public Canvas canvas;
+
     private void Awake()
     {
         playerGun = playerGun.GetComponent<Gun>();
@@ -36,7 +39,10 @@ public class StartPaces : MonoBehaviour
         playerMov.move = false;
         agent = agent.GetComponent<NavMeshAgent>();
         agent.enabled = !agent.enabled;
+        canvas = canvas.GetComponent<Canvas>();
+        canvas.enabled = !canvas.enabled;
         StartCoroutine(Paces());
+
     }
     // Update is called once per frame
     void Update()
@@ -66,6 +72,7 @@ public class StartPaces : MonoBehaviour
         enemyMov.move = true;
         playerMov.move = true;
         agent.enabled = !agent.enabled;
-        
+
+        canvas.enabled = !canvas.enabled;
     }
 }

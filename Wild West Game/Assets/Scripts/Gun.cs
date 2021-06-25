@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class Gun : MonoBehaviour
     public float ammoCount = 6;
     public float reloadTime = 8f;
     public bool inReload = false;
+
+    public Text score;
+    public int scr = 0;
 
     void Start()
     {
@@ -107,40 +111,58 @@ public class Gun : MonoBehaviour
             
             
             if (hit.transform.tag == "enemy head")
-            {
-                health.TakeDamage(100);
-                enemyHead = false;
-                //Debug.Log("Headshot");
-            }
-            if (hit.transform.tag == "enemy right leg")
-            {
-                health.TakeDamage(20);
-                enemyRightLeg = false;
-                //Debug.Log("Right Leg");
-            }
-            if (hit.transform.tag == "enemy left leg")
-            {
-                health.TakeDamage(20);
-                enemyLeftLeg = false;
-                //Debug.Log("Left Leg");
-            }
-            if (hit.transform.tag == "enemy right arm")
-            {
-                health.TakeDamage(30);
-                enemyRightArm = false;
-                //Debug.Log("Right Arm");
-            }
-            if (hit.transform.tag == "enemy left arm")
-            {
-                health.TakeDamage(30);
-                enemyLeftArm = false;
-                //Debug.Log("Left Arm");
-            }
-            else if (hit.transform.tag == "enemy body")
-            {
-                health.TakeDamage(20);
-                //Debug.Log("BodyShot");
-            }
+                        {
+                            health.TakeDamage(100);
+                            enemyHead = false;
+                            //Debug.Log("Headshot");
+                             scr += 1200;
+                             score.text = "Score: " + scr;
+
+                        }
+                        if (hit.transform.tag == "enemy right leg")
+                        {
+                            health.TakeDamage(20);
+                            enemyRightLeg = false;
+                            //Debug.Log("Right Leg");
+                            scr+= 200;
+                            score.text = "Score: " + scr;
+
+                        }
+                        if (hit.transform.tag == "enemy left leg")
+                        {
+                            health.TakeDamage(20);
+                            enemyLeftLeg = false;
+                            //Debug.Log("Left Leg");
+
+                            scr+= 200;
+                            score.text = "Score: " + scr;
+                        }
+                        if (hit.transform.tag == "enemy right arm")
+                        {
+                            health.TakeDamage(30);
+                            enemyRightArm = false;
+                            //Debug.Log("Right Arm");
+
+                            scr+= 300;
+                                            score.text = "Score: " + scr;
+                        }
+                        if (hit.transform.tag == "enemy left arm")
+                        {
+                            health.TakeDamage(30);
+                            enemyLeftArm = false;
+                            //Debug.Log("Left Arm");
+
+                            scr+= 300;
+                                            score.text = "Score: " + scr;
+                        }
+                        else if (hit.transform.tag == "enemy body")
+                        {
+                            health.TakeDamage(20);
+                            //Debug.Log("BodyShot");
+
+                            scr+= 100;
+                                            score.text = "Score: " + scr;
+                        }
             Debug.Log("Enemy Health" + health.health);
 
 
