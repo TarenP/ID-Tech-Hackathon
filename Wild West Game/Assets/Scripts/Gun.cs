@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
     public GameObject Enemy;
 
     public bool ableToShoot;
-    public float chamberTime = 1f;
+    public float chamberTime = 0.3f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
     public bool inReload = false;
 
     public Text score;
-    public int scr = 0;
+    public int scr = 100;
 
     void Start()
     {
@@ -91,7 +91,7 @@ public class Gun : MonoBehaviour
         }*/
         if (gun.RightArm == false)
         {
-            chamberTime = 4f;
+            chamberTime = 3.3f;
         }
         /*if (gun.RightArm == false && gun.Head == false)
         {

@@ -26,7 +26,7 @@ public class EnemyGun : MonoBehaviour
 
     public float chamberTime;
     public float ammoCount = 6;
-    public float reloadTime = 10f;
+    public float reloadTime = 8f;
     public bool inReload = false;
 
     public GameObject[] targets;
