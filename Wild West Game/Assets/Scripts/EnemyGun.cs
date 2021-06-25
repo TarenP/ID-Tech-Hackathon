@@ -18,6 +18,7 @@ public class EnemyGun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem Flash;
     public GameObject impact;
+    public GameObject bloodImpact;
 
     public GameObject player;
 
@@ -121,7 +122,11 @@ public class EnemyGun : MonoBehaviour
             }
             Debug.Log("Player Health" + health.health);
 
-
+            if (hit.transform.tag != "Map")
+            {
+                GameObject Blood = Instantiate(bloodImpact, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(Blood, 2f);
+            }
             GameObject impactGO = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2f);
             

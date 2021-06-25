@@ -192,6 +192,7 @@ MonoBehaviour:
   fpsCam: {fileID: 2305252247356639886}
   Flash: {fileID: 9159759827660321408}
   impact: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
+  bloodImpact: {fileID: 100002, guid: fc7f8379080d0a844ad699b91bfd56f0, type: 3}
   player: {fileID: 0}
   gun: {fileID: 0}
   chamberTime: 0

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -12,12 +11,8 @@ public class EnemyHealth : MonoBehaviour
         //Debug.Log(health);
         if (health <= 0f)
         {
-            Die();
+            SceneManager.LoadScene(3);
         }
     }
 
-    void Die()
-    {
-        Debug.Log("Enemy Dead");
-    }
 }

@@ -21,6 +21,7 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public GameObject bloodImpact;
 
     public Vector3 upRecoil;
     Vector3 originalRotation;
@@ -142,10 +143,18 @@ public class Gun : MonoBehaviour
             }
             Debug.Log("Enemy Health" + health.health);
 
-            
 
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
+            if (hit.transform.tag != "Map")
+            {
+                GameObject Blood = Instantiate(bloodImpact, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(Blood, 2f);
+            }
+            else
+            {
+                GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
+            }
+            
         }
     }
 }

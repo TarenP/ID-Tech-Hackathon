@@ -18,6 +18,7 @@ TagManager:
   - left arm
   - body
   - enemy body
+  - Map
   layers:
   - Default
   - TransparentFX
