@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
     public GameObject Enemy;
 
     public bool ableToShoot;
-    public float chamberTime = 0.3f;
+    public float chamber = 1f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -32,8 +32,9 @@ public class Gun : MonoBehaviour
     public bool inReload = false;
 
     public Text score;
-    public int scr = 100;
-
+    public int scr = 0;
+    public AudioSource chamberFX;
+    public AudioSource chamberFXLong;
     void Start()
     {
         originalRotation = transform.localEulerAngles;
@@ -62,6 +63,7 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
+
         yield return new WaitForSeconds(reloadTime);
         inReload = false;
     }
@@ -74,6 +76,8 @@ public class Gun : MonoBehaviour
     private void StopRecoil()
     {
         transform.localEulerAngles = originalRotation;
+        chamberFX.Play();
+        Debug.Log("short");
 
     }
     IEnumerator Main()
@@ -91,13 +95,13 @@ public class Gun : MonoBehaviour
         }*/
         if (gun.RightArm == false)
         {
-            chamberTime = 3.3f;
+            chamber = 3.3f;
         }
         /*if (gun.RightArm == false && gun.Head == false)
         {
             reloadTime = 8f;
         }*/
-        yield return new WaitForSeconds(chamberTime);
+        yield return new WaitForSeconds(chamber);
         ableToShoot = true;
     }
     void Shoot()
@@ -163,7 +167,7 @@ public class Gun : MonoBehaviour
                             scr+= 100;
                                             score.text = "Score: " + scr;
                         }
-            Debug.Log("Enemy Health" + health.health);
+            //Debug.Log("Enemy Health" + health.health);
 
 
             if (hit.transform.tag != "Map")

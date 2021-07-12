@@ -132,6 +132,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -485,7 +489,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: ff4af72731fea3f28eff6d96c8886c0a
+      Hash: 097707e5cd51af84a248889c0605a19f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyGun
@@ -713,7 +717,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: c0734c4050091658a132a3177f2eaf96
+      Hash: a62618af925c6df530fbcbb5eea83a8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Gun
@@ -981,5 +985,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Game.unity
   - Assets/Scenes/Death Screen.unity
   - Assets/Scenes/Victory Screen.unity
-  playerPath: D:/taren/Desktop/Taren Patel ID Tech Hackathon/Builds/Unity Hackathon
-    ID Tech.exe
+  playerPath: D:/taren/Desktop/Taren Patel ID Tech Hackathon/ID-Tech-Hackathon/Wild
+    West Game/Builds/Unity Hackathon ID Tech.exe

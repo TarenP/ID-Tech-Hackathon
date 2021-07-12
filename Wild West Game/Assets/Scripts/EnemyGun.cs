@@ -24,7 +24,7 @@ public class EnemyGun : MonoBehaviour
 
     public Gun gun;
 
-    public float chamberTime;
+    float chamberTime;
     public float ammoCount = 6;
     public float reloadTime = 8f;
     public bool inReload = false;
@@ -122,7 +122,7 @@ public class EnemyGun : MonoBehaviour
                 //Debug.Log("body");
                 health.TakeDamage(20);
             }
-            Debug.Log("Player Health" + health.health);
+            //Debug.Log("Player Health" + health.health);
 
             if (hit.transform.tag != "Map")
             {

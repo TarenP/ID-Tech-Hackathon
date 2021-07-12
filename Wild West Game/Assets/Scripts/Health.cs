@@ -13,7 +13,15 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        hp.text = "Health: " + health;
+        if (health < 0)
+        {
+            hp.text = "Health: " + 0;
+        }
+        else
+        {
+            hp.text = "Health: " + health;
+        }
+        
         //Debug.Log(health);
         if (health <= 0f)
         {
